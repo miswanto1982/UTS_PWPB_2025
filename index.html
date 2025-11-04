@@ -298,6 +298,42 @@ textarea{width:100%;height:60px;border:1px solid #ccc;border-radius:8px;padding:
       });
   });
 })();
+  // === Deteksi Screenshot ===
+window.addEventListener('keyup', function(e) {
+  if (e.key === 'PrintScreen') {
+    navigator.clipboard.writeText('');
+    showWarning('Tindakan screenshot terdeteksi.');
+  }
+});
+
+// Blok kombinasi umum screenshot di Windows & macOS
+window.addEventListener('keydown', function(e) {
+  // Windows: Alt + PrintScreen atau Windows + Shift + S
+  if (
+    (e.key === 'PrintScreen') ||
+    (e.ctrlKey && e.key.toLowerCase() === 'p') || // Ctrl + P (print)
+    (e.key.toLowerCase() === 's' && (e.metaKey || e.shiftKey || e.ctrlKey)) // Shift+S, Cmd+S, Ctrl+S
+  ) {
+    e.preventDefault();
+    showWarning('Tindakan screenshot atau simpan layar terdeteksi.');
+  }
+
+  // macOS: Command + Shift + 3/4/5
+  if (e.metaKey && e.shiftKey && ['3', '4', '5'].includes(e.key)) {
+    e.preventDefault();
+    showWarning('Screenshot di Mac terdeteksi.');
+  }
+});
+
+// Tambahan CSS dinamis: layar jadi gelap sebentar saat SC terdeteksi
+function flashBlackScreen() {
+  overlay.style.display = 'flex';
+  overlay.textContent = '🚫 Screenshot terdeteksi! Ujian dihentikan.';
+  overlay.style.background = 'black';
+  setTimeout(()=>exitFullscreenSafe(), 800);
+  quizArea.style.display='none';
+}
 </script>
 </body>
+
 </html>
