@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ujian HTML & CSS - SMK Negeri 1 Sudimoro</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#e8f4fd;
+  --card:#ffffff;
+  --primary:#0b79d0;
+  --muted:#3f5870;
+}
+body{
+  font-family:'Poppins',sans-serif;
+  margin:0;
+  background:linear-gradient(180deg,var(--bg),#f5fbff);
+  color:#073047;
+  padding:12px;
+  user-select:none;
+}
+.wrap{max-width:1100px;margin:12px auto;}
+header{
+  background:var(--primary);
+  color:white;
+  padding:18px;
+  border-radius:10px;
+  text-align:center;
+  box-shadow:0 6px 18px rgba(10,80,140,0.12);
+}
+form.card{
+  background:var(--card);
+  margin-top:14px;
+  padding:18px;
+  border-radius:10px;
+  box-shadow:0 6px 18px rgba(10,80,140,0.06);
+}
+button{
+  background:var(--primary);
+  color:white;
+  border:none;
+  padding:12px 20px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:700;
+  font-size:15px;
+  box-shadow:0 6px 12px rgba(7,48,71,0.12);
+}
+footer{text-align:center;margin-top:18px;color:var(--muted);font-size:14px}
+#startScreen{
+  position:fixed;inset:0;background:rgba(0,0,0,0.92);color:white;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;z-index:9999;
+  text-align:center;padding:20px;transition:opacity 0.4s ease;
+}
+#startScreen.hidden{opacity:0;pointer-events:none;visibility:hidden;}
+#startScreen h2{margin-bottom:10px}
+.soal label{display:block;margin:4px 0;}
+#warningOverlay {
+  position: fixed;inset: 0;background: black;color: white;
+  display: none;justify-content: center;align-items: center;text-align: center;
+  font-size: 22px;font-weight: bold;z-index: 99999;
+}
+textarea{width:100%;height:60px;border:1px solid #ccc;border-radius:8px;padding:8px;font-family:'Poppins';}
+.hidden{display:none;}
+</style>
+</head>
+<body>
+<div id="startScreen">
+  <h2>💻 Ujian Siap Dimulai</h2>
+  <p>Pastikan Anda berada di tempat yang tenang. Klik tombol di bawah ini untuk masuk ke mode layar penuh dan memulai ujian.</p>
+  <button id="startBtn">Mulai Ujian</button>
+</div>
+
+<div id="warningOverlay">🚫 Ujian dihentikan! Anda keluar dari mode ujian atau mencoba screenshot.</div>
+
+<div class="wrap hidden" id="quizArea">
+  <header>
+    <h1>Ulangan Dasar HTML & CSS</h1>
+    <p>SMK Negeri 1 Sudimoro — Kompetensi Keahlian: RPL</p>
+  </header>
+
+  <form id="quizForm" class="card" method="POST" autocomplete="off" novalidate>
+    <section class="info">
+      <label>Nama Lengkap</label>
+      <input name="nama" required><br><br>
+      <label>Kelas</label>
+      <input name="kelas" required><br><br>
+      <label>Tanggal Ujian</label>
+      <input name="tanggal" type="date" required>
+    </section>
+
+      <h3 style="margin-top:14px">🧠 Pilihan Ganda (15 Soal)</h3>
+      <ol>
+        <li class="soal"><strong>Tag untuk membuat paragraf dalam HTML adalah...</strong>
+          <label><input type="radio" name="soal1" value="a"> a. &lt;head&gt;</label>
+          <label><input type="radio" name="soal1" value="b"> b. &lt;body&gt;</label>
+          <label><input type="radio" name="soal1" value="c"> c. &lt;div&gt;</label>
+          <label><input type="radio" name="soal1" value="d"> d. &lt;p&gt;</label>
+          <label><input type="radio" name="soal1" value="e"> e. &lt;pre&gt;</label>
+        </li>
+        <li class="soal"><strong>Tag untuk menampilkan gambar adalah...</strong>
+          <label><input type="radio" name="soal2" value="a"> a. &lt;image&gt;</label>
+          <label><input type="radio" name="soal2" value="b"> b. &lt;img&gt;</label>
+          <label><input type="radio" name="soal2" value="c"> c. &lt;pic&gt;</label>
+          <label><input type="radio" name="soal2" value="d"> d. &lt;photo&gt;</label>
+          <label><input type="radio" name="soal2" value="e"> e. &lt;figure&gt;</label>
+        </li>
+        <li class="soal"><strong>Tag HTML yang digunakan untuk membuat tautan adalah...</strong>
+          <label><input type="radio" name="soal3" value="a"> a. &lt;link&gt;</label>
+          <label><input type="radio" name="soal3" value="b"> b. &lt;a&gt;</label>
+          <label><input type="radio" name="soal3" value="c"> c. &lt;href&gt;</label>
+          <label><input type="radio" name="soal3" value="d"> d. &lt;url&gt;</label>
+          <label><input type="radio" name="soal3" value="e"> e. &lt;src&gt;</label>
+        </li>
+        <li class="soal"><strong>Atribut “src” digunakan untuk...</strong>
+          <label><input type="radio" name="soal4" value="a"> a. Menentukan warna teks</label>
+          <label><input type="radio" name="soal4" value="b"> b. Menentukan lokasi file gambar</label>
+          <label><input type="radio" name="soal4" value="c"> c. Mengatur ukuran font</label>
+          <label><input type="radio" name="soal4" value="d"> d. Menentukan gaya teks</label>
+          <label><input type="radio" name="soal4" value="e"> e. Menentukan jenis list</label>
+        </li>
+        <li class="soal"><strong>Tag untuk membuat daftar bernomor adalah...</strong>
+          <label><input type="radio" name="soal5" value="a"> a. &lt;ul&gt;</label>
+          <label><input type="radio" name="soal5" value="b"> b. &lt;ol&gt;</label>
+          <label><input type="radio" name="soal5" value="c"> c. &lt;li&gt;</label>
+          <label><input type="radio" name="soal5" value="d"> d. &lt;dl&gt;</label>
+          <label><input type="radio" name="soal5" value="e"> e. &lt;dt&gt;</label>
+        </li>
+        <li class="soal"><strong>CSS digunakan untuk...</strong>
+          <label><input type="radio" name="soal6" value="a"> a. Mengatur struktur halaman</label>
+          <label><input type="radio" name="soal6" value="b"> b. Mengatur tampilan halaman</label>
+          <label><input type="radio" name="soal6" value="c"> c. Menambah logika interaktif</label>
+          <label><input type="radio" name="soal6" value="d"> d. Mengirim data ke server</label>
+          <label><input type="radio" name="soal6" value="e"> e. Membuat database</label>
+        </li>
+        <li class="soal"><strong>Properti CSS untuk mengubah warna teks adalah...</strong>
+          <label><input type="radio" name="soal7" value="a"> a. font-size</label>
+          <label><input type="radio" name="soal7" value="b"> b. background-color</label>
+          <label><input type="radio" name="soal7" value="c"> c. color</label>
+          <label><input type="radio" name="soal7" value="d"> d. text-align</label>
+          <label><input type="radio" name="soal7" value="e"> e. font-weight</label>
+        </li>
+        <li class="soal"><strong>CSS dapat ditulis di dalam tag HTML menggunakan atribut...</strong>
+          <label><input type="radio" name="soal8" value="a"> a. href</label>
+          <label><input type="radio" name="soal8" value="b"> b. src</label>
+          <label><input type="radio" name="soal8" value="c"> c. style</label>
+          <label><input type="radio" name="soal8" value="d"> d. id</label>
+          <label><input type="radio" name="soal8" value="e"> e. class</label>
+        </li>
+        <li class="soal"><strong>Tag HTML untuk baris tabel adalah...</strong>
+          <label><input type="radio" name="soal9" value="a"> a. &lt;td&gt;</label>
+          <label><input type="radio" name="soal9" value="b"> b. &lt;th&gt;</label>
+          <label><input type="radio" name="soal9" value="c"> c. &lt;tr&gt;</label>
+          <label><input type="radio" name="soal9" value="d"> d. &lt;table&gt;</label>
+          <label><input type="radio" name="soal9" value="e"> e. &lt;tbody&gt;</label>
+        </li>
+        <li class="soal"><strong>Untuk menautkan file CSS eksternal digunakan tag...</strong>
+          <label><input type="radio" name="soal10" value="a"> a. &lt;script&gt;</label>
+          <label><input type="radio" name="soal10" value="b"> b. &lt;style&gt;</label>
+          <label><input type="radio" name="soal10" value="c"> c. &lt;link&gt;</label>
+          <label><input type="radio" name="soal10" value="d"> d. &lt;meta&gt;</label>
+          <label><input type="radio" name="soal10" value="e"> e. &lt;css&gt;</label>
+        </li>
+        <li class="soal"><strong>Selector CSS yang diawali tanda “#” digunakan untuk...</strong>
+          <label><input type="radio" name="soal11" value="a"> a. Tag HTML</label>
+          <label><input type="radio" name="soal11" value="b"> b. Class</label>
+          <label><input type="radio" name="soal11" value="c"> c. ID</label>
+          <label><input type="radio" name="soal11" value="d"> d. Elemen anak</label>
+          <label><input type="radio" name="soal11" value="e"> e. Semua elemen</label>
+        </li>
+        <li class="soal"><strong>Properti CSS untuk mengatur jarak antar elemen luar adalah...</strong>
+          <label><input type="radio" name="soal12" value="a"> a. padding</label>
+          <label><input type="radio" name="soal12" value="b"> b. margin</label>
+          <label><input type="radio" name="soal12" value="c"> c. border</label>
+          <label><input type="radio" name="soal12" value="d"> d. space</label>
+          <label><input type="radio" name="soal12" value="e"> e. align</label>
+        </li>
+        <li class="soal"><strong>Tag HTML untuk menampilkan teks tebal adalah...</strong>
+          <label><input type="radio" name="soal13" value="a"> a. &lt;i&gt;</label>
+          <label><input type="radio" name="soal13" value="b"> b. &lt;strong&gt;</label>
+          <label><input type="radio" name="soal13" value="c"> c. &lt;u&gt;</label>
+          <label><input type="radio" name="soal13" value="d"> d. &lt;mark&gt;</label>
+          <label><input type="radio" name="soal13" value="e"> e. &lt;bq&gt;</label>
+        </li>
+        <li class="soal"><strong>Untuk mengubah ukuran teks digunakan properti CSS...</strong>
+          <label><input type="radio" name="soal14" value="a"> a. text-align</label>
+          <label><input type="radio" name="soal14" value="b"> b. color</label>
+          <label><input type="radio" name="soal14" value="c"> c. font-size</label>
+          <label><input type="radio" name="soal14" value="d"> d. text-size</label>
+          <label><input type="radio" name="soal14" value="e"> e. font-style</label>
+        </li>
+        <li class="soal"><strong>Tag HTML untuk menampilkan baris baru adalah...</strong>
+          <label><input type="radio" name="soal15" value="a"> a. &lt;br&gt;</label>
+          <label><input type="radio" name="soal15" value="b"> b. &lt;hr&gt;</label>
+          <label><input type="radio" name="soal15" value="c"> c. &lt;div&gt;</label>
+          <label><input type="radio" name="soal15" value="d"> d. &lt;break&gt;</label>
+          <label><input type="radio" name="soal15" value="e"> e. &lt;pre&gt;</label>
+        </li>
+      </ol>
+
+      <h3 style="margin-top:14px">📝 Soal Essay (5 Soal)</h3>
+      <ol start="16">
+        <li><label>Jelaskan perbedaan antara HTML dan CSS!</label><textarea name="essay1" required></textarea></li>
+        <li><label>Jelaskan fungsi tag &lt;head&gt; pada dokumen HTML!</label><textarea name="essay2" required></textarea></li>
+        <li><label>Sebutkan minimal 3 properti dasar CSS untuk mengatur teks!</label><textarea name="essay3" required></textarea></li>
+        <li><label>Apa yang dimaksud dengan selector dalam CSS?</label><textarea name="essay4" required></textarea></li>
+        <li><label>Jelaskan fungsi dari atribut "href" pada tag &lt;a&gt;!</label><textarea name="essay5" required></textarea></li>
+      </ol>
+
+      <div style="display:flex;gap:12px;align-items:center;margin-top:12px">
+        <button id="submitBtn" type="submit">Kirim Jawaban</button>
+        <div class="note">Catatan: Pastikan jawaban Anda sudah benar.</div>
+      </div>
+    </form>
+
+    <footer><p>© 2025 SMK Negeri 1 Sudimoro | RPL</p></footer>
+  </div>
+
+<script>
+(function(){
+  const startScreen = document.getElementById('startScreen');
+  const startBtn = document.getElementById('startBtn');
+  const quizArea = document.getElementById('quizArea');
+  const overlay = document.getElementById('warningOverlay');
+  const form = document.getElementById('quizForm');
+  const submitBtn = document.getElementById('submitBtn');
+
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwQTqj-89HaNmoUFsUXUeRA8OyYV0kcjD2WpnxcndJCVnWhWQtMKXxcUTb6sI_Ubw0/exec';
+
+  // === Kunci Jawaban ===
+  const kunciJawaban = {
+    soal1:'d',soal2:'b',soal3:'b',soal4:'b',soal5:'b',
+    soal6:'b',soal7:'c',soal8:'c',soal9:'c',soal10:'c',
+    soal11:'c',soal12:'b',soal13:'b',soal14:'c',soal15:'a'
+  };
+  function hitungSkor(form){
+    let benar=0;
+    for(let i=1;i<=15;i++){
+      const j=form[`soal${i}`].value;
+      if(j===kunciJawaban[`soal${i}`]) benar++;
+    }
+    return benar*(100/15);
+  }
+
+  // === Fullscreen ===
+  function enterFullscreen(){const el=document.documentElement;
+    if(el.requestFullscreen)el.requestFullscreen();
+    else if(el.mozRequestFullScreen)el.mozRequestFullScreen();
+    else if(el.webkitRequestFullscreen)el.webkitRequestFullscreen();
+    else if(el.msRequestFullscreen)el.msRequestFullscreen();
+  }
+  function exitFullscreenSafe(){
+    if(document.exitFullscreen)document.exitFullscreen();
+    else if(document.mozCancelFullScreen)document.mozCancelFullScreen();
+    else if(document.webkitExitFullscreen)document.webkitExitFullscreen();
+  }
+
+  startBtn.addEventListener('click',()=>{
+    startScreen.classList.add('hidden');
+    quizArea.classList.remove('hidden');
+    enterFullscreen();
+  });
+
+  // Anti keluar fullscreen / inspect
+  document.addEventListener('fullscreenchange',()=>{
+    if(!document.fullscreenElement){overlay.style.display='flex';setTimeout(()=>location.reload(),2500);}
+  });
+  document.addEventListener('keydown',e=>{
+    if(e.key==='PrintScreen'||(e.ctrlKey&&e.key==='u')||(e.ctrlKey&&e.shiftKey&&['I','J','C'].includes(e.key))) {
+      e.preventDefault();
+      overlay.style.display='flex';
+      setTimeout(()=>location.reload(),2000);
+    }
+  });
+
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    const skor=hitungSkor(form);
+    const fd=new FormData(form);
+    fd.append('skor',skor);
+    submitBtn.disabled=true;
+    submitBtn.textContent='Mengirim...';
+    fetch(scriptURL,{method:'POST',body:fd})
+      .then(r=>r.text())
+      .then(()=>{
+        alert(`✅ Jawaban berhasil dikirim.\nNilai Anda: ${skor.toFixed(2)}`);
+        exitFullscreenSafe();
+        form.reset();
+        location.reload();
+      })
+      .catch(()=>{
+        alert('❌ Gagal mengirim. Periksa koneksi internet.');
+      })
+      .finally(()=>{
+        submitBtn.disabled=false;
+        submitBtn.textContent='Kirim Jawaban';
+      });
+  });
+})();
+</script>
+</body>
+</html>
