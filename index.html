@@ -76,14 +76,37 @@ textarea{width:100%;height:60px;border:1px solid #ccc;border-radius:8px;padding:
 
 <div class="wrap hidden" id="quizArea">
    <header>
-    <img src="https://raw.githubusercontent.com/miswanto1982/UTS_PWPB_2025/main/logo_smk.png" alt="Logo SMK">
-    <div>
-      <h1>UJIAN TENGAH SEMESTER</h1>
-      <p>Mata Pelajaran: Pemrograman Web dan Perangkat Bergerak</p>
-      <p>SMK Negeri 1 Sudimoro - Kompetensi Keahlian RPL</p>
+  <div style="
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1e8449;
+    color: white;
+    padding: 10px 20px;
+    border-bottom: 4px solid #0b3d0b;
+  ">
+    <!-- Logo kiri -->
+    <img 
+      src="https://raw.githubusercontent.com/miswanto1982/UTS_PWPB_2025/main/logo_smk.png" 
+      alt="Logo SMK" 
+      style="height: 80px; width: auto; border-radius: 10px; object-fit: contain;"
+    >
+
+    <!-- Judul Tengah -->
+    <div style="text-align: center; flex: 1; margin: 0 15px;">
+      <h1 style="margin: 0; font-size: 24px;">UJIAN TENGAH SEMESTER</h1>
+      <p style="margin: 4px 0; font-size: 15px;">Mata Pelajaran: Pemrograman Web dan Perangkat Bergerak</p>
+      <p style="margin: 4px 0; font-size: 14px;">SMK Negeri 1 Sudimoro - Kompetensi Keahlian RPL</p>
     </div>
-    <img src="https://raw.githubusercontent.com/miswanto1982/UTS_PWPB_2025/main/LOGO_RPL.png" alt="Logo RPL">
-  </header>
+
+    <!-- Logo kanan -->
+    <img 
+      src="https://raw.githubusercontent.com/miswanto1982/UTS_PWPB_2025/main/LOGO_RPL.png" 
+      alt="Logo RPL" 
+      style="height: 80px; width: auto; border-radius: 10px; object-fit: contain;"
+    >
+  </div>
+</header>
 
   <form id="quizForm" class="card" method="POST" autocomplete="off" novalidate>
     <section class="info">
@@ -342,4 +365,5 @@ function flashBlackScreen() {
 </body>
 
 </html>
+
 
